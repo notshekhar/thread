@@ -1,0 +1,30 @@
+:root {
+    --background-search-input: #18181;
+    --background-color: rgb(15, 15, 15);
+    --background-color-secondary: #212121;
+    --color: ;
+}
+
+body {
+    background-color: var(--background-color);
+}
+.login-wrap {
+    position: absolute;
+    height: 600px;
+    width: 600px;
+    top: calc(50% - 300px);
+    left: calc(50% - 300px);
+    border-radius: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.login-wrap > input[name="username"] {
+    height: 40px;
+    width: 100px;
+    background-color: var(--background-search-input);
+    border: none;
+}
+
