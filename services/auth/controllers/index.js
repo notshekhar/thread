@@ -4,9 +4,10 @@ const users = db.get("users")
 
 export async function authHandler(req, res) {
     const { token } = req.headers
-    let { username } = this.jwt.verify(token)
-    let user = await users.findOne({ username })
-    if (user) return true
+    this.example()
+    // let { username } = this.jwt.verify(token)
+    // let user = await users.findOne({ username })
+    // if (user) return true
     return false
 }
 

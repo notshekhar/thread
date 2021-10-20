@@ -4,9 +4,8 @@ import AutoLoad from "fastify-autoload"
 import Cors from "fastify-cors"
 import JWT from "fastify-jwt"
 import Swagger from "fastify-swagger"
-import { readFileSync } from "fs"
-
 import { jwt_secret } from "./config.js"
+import example_plugin from "./plugins/index.js"
 
 export default async function (app, opts) {
     app.register(Swagger, {
@@ -18,10 +17,11 @@ export default async function (app, opts) {
     })
     app.register(Cors, { origin: "*" })
     app.register(JWT, { secret: jwt_secret })
+    app.register(example_plugin)
     app.register(AutoLoad, {
         dir: join(dirname(fileURLToPath(import.meta.url)), "routers"),
     })
     // app.register(route)
     // app.register("/bob", route)
-    app.listen(3000)
+    app.listen(80)
 }

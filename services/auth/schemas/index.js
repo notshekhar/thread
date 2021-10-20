@@ -24,9 +24,6 @@ export const authSchema = {
         response: {
             200: {
                 type: "boolean",
-                // properties: {
-                //     auth: {type: "boolean"}
-                // }
             },
         },
     },

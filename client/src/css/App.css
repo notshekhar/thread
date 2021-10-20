@@ -2,29 +2,81 @@
     --background-search-input: #18181;
     --background-color: rgb(15, 15, 15);
     --background-color-secondary: #212121;
-    --color: ;
+    --color: white;
 }
 
 body {
     background-color: var(--background-color);
+    color: var(--color);
 }
-.login-wrap {
+.mobile-wrap {
     position: absolute;
-    height: 600px;
-    width: 600px;
-    top: calc(50% - 300px);
-    left: calc(50% - 300px);
-    border-radius: 51px;
+    top: 0px;
+    width: min(500px, 100%);
+    height: 100%;
+    left: max(calc(50% - 250px), 0px);
+    background: #000000;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
-.login-wrap > input[name="username"] {
-    height: 40px;
-    width: 100px;
-    background-color: var(--background-search-input);
-    border: none;
+.input {
+    width: 71%;
+    background: red;
+    height: 50px;
+    position: relative;
+    background-color: var(--background-color-secondary);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.codes_list {
+    position: absolute;
+    border-radius: 21px;
+    z-index: 10;
+    height: 400px;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    overflow-y: scroll;
+    /* background-color: var(--background-color-secondary); */
+    /* background-color: #000000; */
+}
+.code {
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    transition: all 400ms;
+    margin-bottom: 1px;
+    background-color: var(--background-color-secondary);
+}
+.code:hover {
+    background: var(--background-color);
+    transform: scale(1.05);
 }
 
+.mobile {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+.mobile > input[type="number"] {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: none;
+    background-color: transparent;
+    color: var(--color);
+    font-size: 1rem;
+}
+
+/* @media (max-width: 500px) {
+    .mobile-wrap {
+        width: 100%;
+        left: 0px;
+    }
+} */

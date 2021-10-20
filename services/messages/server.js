@@ -12,15 +12,18 @@ io.on("connection", (socket) => {
     socket.on("join-room", (id) => {
         socket.join(id)
     })
+    console.log(socket.sockets)
     // sendData = {
     //     // type: emoji / text / image / video / audio / location,
     //     // by: id,
     //     // value: value,
     // }
-    socket.on("message", (id, toID, messageData) => {
-        socket.to(toId).emit.broadcast("recieve_message", {
-            ...messageData,
-            id: id,
+    socket.on("message", (to_ids, messageData) => {
+        to_ids.forEach((id) => {
+            socket.to(id).emit.broadcast("recieve_message", {
+                ...messageData,
+                id: id,
+            })
         })
     })
 })
